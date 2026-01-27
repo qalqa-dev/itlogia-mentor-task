@@ -27,14 +27,6 @@
     justify-self: start;
   }
 
-  &__logo-text {
-    font-size: 32px;
-    max-width: 100px;
-    text-transform: uppercase;
-    word-break: break-word;
-    font-weight: 900;
-    color: var(--color-accent-primary);
-  }
   &__menu {
     gap: 2vw;
     max-width: 650px;
