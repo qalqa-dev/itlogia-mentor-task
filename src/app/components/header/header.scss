@@ -36,28 +36,64 @@
     grid-column: 2;
     justify-self: center;
 
-    &__item {
+    &-item {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
     &--mobile {
+      width: 100%;
+      max-width: none;
       position: absolute;
       top: 100%;
-      left: 0;
+      left: -16px;
       right: 0;
-      max-width: none;
+      font-size: 24px;
       padding: 16px 24px;
       flex-direction: column;
       gap: 16px;
       background-color: var(--color-background);
-      display: none;
+      display: flex;
+      opacity: 0;
+      transform: translateY(-20px);
+      visibility: hidden;
       z-index: 10;
+      transition:
+        opacity 0.3s ease-in-out,
+        transform 0.3s ease-in-out,
+        visibility 0.3s ease-in-out;
+
+      .header__menu-item {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition:
+          opacity 0.3s ease-in-out,
+          transform 0.3s ease-in-out;
+
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            transition-delay: #{$i * 0.05}s;
+          }
+        }
+      }
+
+      &.header__menu--open {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+
+        .header__menu-item {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     }
 
     &--open {
-      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
     }
   }
 
