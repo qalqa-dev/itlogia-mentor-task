@@ -1,1 +1,18 @@
-<p>catalog works!</p>
+<section class="catalog">
+  <div class="catalog__container">
+    <h2 class="catalog__title">Выберите свою любимую пиццу</h2>
+
+    <div class="catalog__list">
+      @for (pizza of pizzas; track pizza.uid) {
+        <article class="catalog__item">
+          <img class="catalog__item-img" [src]="pizza.imgUrl" [alt]="pizza.name" />
+          <h3 class="catalog__item-name">{{ pizza.name }}</h3>
+          <p class="catalog__item-ingredients">
+            {{ pizza.ingredients.join(', ') }}
+          </p>
+          <button class="catalog__item-button">В корзину</button>
+        </article>
+      }
+    </div>
+  </div>
+</section>
