@@ -2,6 +2,11 @@
 @use './app/styles/colors.scss' as *;
 @use './app/styles/typography.scss';
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20%;
+}
+
 body {
   min-height: 100vh;
   font-family: 'Muller', sans-serif;
