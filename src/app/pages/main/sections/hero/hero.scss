@@ -1,5 +1,5 @@
 .hero {
-  padding: 120px 0 180px;
+  padding: 120px 0 160px;
   background-color: var(--color-background);
 
   &__container {
@@ -17,7 +17,7 @@
 
   &__title {
     font-size: 38px;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1.2;
     color: var(--color-text-primary);
     margin: 0;
@@ -40,18 +40,6 @@
     margin: 0;
   }
 
-  &__item {
-    display: flex;
-    gap: 12px;
-
-    &-icon {
-      width: 100%;
-      max-width: 80px;
-      max-height: 80px;
-      object-fit: contain;
-    }
-  }
-
   &__item-content {
     display: flex;
     gap: 8px;
@@ -62,20 +50,30 @@
       gap: 4px;
     }
   }
+  &__item {
+    font-size: 16px;
+    display: flex;
+    gap: 12px;
 
-  &__item-title {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--color-accent-primary);
-    margin: 0;
-    text-transform: uppercase;
-  }
+    &-icon {
+      width: 100%;
+      max-width: 70px;
+      max-height: 70px;
+      object-fit: contain;
+    }
 
-  &__item-text {
-    font-size: 14px;
-    line-height: 1.4;
-    color: var(--color-text-primary);
-    margin: 0;
+    &-title {
+      font-weight: 800;
+      color: var(--color-accent-primary);
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    &-text {
+      line-height: 1.2;
+      color: var(--color-text-primary);
+      margin: 0;
+    }
   }
 
   &__image {
@@ -90,8 +88,10 @@
       object-fit: contain;
     }
   }
-  &__button-container {
+
+  &__button {
     width: 35%;
+    height: 60px;
   }
 }
 
@@ -120,7 +120,7 @@
       }
     }
 
-    &__button-container {
+    &__button {
       width: 100%;
     }
   }

@@ -28,6 +28,7 @@
   }
 
   &__menu {
+    font-size: 16px;
     gap: 2vw;
     max-width: 650px;
     display: flex;
@@ -118,8 +119,7 @@
 
   .header__logo {
     &-image {
-      width: 80px;
-      height: 80px;
+      height: 70px;
     }
     &-text {
       font-size: 24px;
