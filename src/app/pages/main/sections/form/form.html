@@ -2,8 +2,8 @@
   <div class="form__container">
     <div class="form__content">
       <h2 class="form__title">
-        <span class="form__title-highlight">Хватит думать!</span>Доставим&nbsp;заказ&nbsp;за&nbsp;30
-        минут!
+        <span class="form__title-highlight">Хватит думать!</span>
+        Доставим&nbsp;заказ&nbsp;за&nbsp;30 минут!
       </h2>
       <p class="form__description">
         Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления заказа. Если мы
@@ -12,11 +12,45 @@
         остался голодный!
       </p>
     </div>
-    <form class="form__self">
-      <input type="text" class="form__input" placeholder="Ваше Имя" />
-      <input type="email" class="form__input" placeholder="Адрес доставки" />
-      <input type="tel" class="form__input" placeholder="Телефон" />
-      <app-button>Оформить заказ</app-button>
+    <form class="form__self" [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+      <div class="form__field">
+        <input
+          type="text"
+          class="form__input"
+          [class.form__input--error]="
+            orderForm.get('name')?.invalid && orderForm.get('name')?.touched
+          "
+          placeholder="Ваше Имя *"
+          formControlName="name"
+          (input)="onNameInput($event)"
+        />
+      </div>
+
+      <div class="form__field">
+        <input
+          type="text"
+          class="form__input"
+          [class.form__input--error]="
+            orderForm.get('address')?.invalid && orderForm.get('address')?.touched
+          "
+          placeholder="Адрес доставки *"
+          formControlName="address"
+        />
+      </div>
+
+      <div class="form__field">
+        <input
+          type="tel"
+          class="form__input"
+          [class.form__input--error]="
+            orderForm.get('phone')?.invalid && orderForm.get('phone')?.touched
+          "
+          placeholder="Телефон *"
+          formControlName="phone"
+        />
+      </div>
+
+      <app-button type="submit">Оформить заказ</app-button>
     </form>
     <img class="form__image" src="/pizza-placeholder.png" alt="Пицца" />
   </div>
