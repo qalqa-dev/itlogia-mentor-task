@@ -1,0 +1,55 @@
+.form {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 38px;
+    font-weight: 700;
+
+    &-highlight {
+      color: var(--color-accent-primary);
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__self {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--color-text-primary);
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: var(--color-text-primary);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1.4) translateX(20px);
+  }
+}
