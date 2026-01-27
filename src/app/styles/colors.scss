@@ -1,0 +1,13 @@
+$colors: (
+  'background': #ffffff,
+  'text-primary': #966f56,
+  'text-secondary': #0a0802,
+  'accent-primary': #ffaf18,
+  'accent-secondary': #b9914f,
+);
+
+:root {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+}
