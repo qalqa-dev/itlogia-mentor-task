@@ -1,0 +1,162 @@
+.hero {
+  padding: 120px 0 60px;
+  background-color: var(--color-background);
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title-highlight {
+    color: var(--color-accent-primary);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    display: flex;
+    gap: 12px;
+
+    &-icon {
+      width: 100%;
+      max-width: 80px;
+      max-height: 80px;
+      object-fit: contain;
+    }
+  }
+
+  &__item-content {
+    display: flex;
+    gap: 8px;
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+
+  &__item-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-accent-primary);
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  &__item-text {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  &__button {
+    align-self: flex-start;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    background-color: var(--color-accent-primary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero {
+    padding: 90px 0 40px;
+
+    &__container {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__list {
+      gap: 20px;
+    }
+
+    &__image {
+      order: -1;
+
+      img {
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 80px 0 32px;
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__button {
+      width: 100%;
+    }
+  }
+}
