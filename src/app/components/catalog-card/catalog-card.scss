@@ -1,0 +1,21 @@
+.catalog-card {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--color-background);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 10px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

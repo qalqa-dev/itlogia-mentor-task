@@ -1,16 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
-interface Pizza {
-  uid: string;
-  imgUrl: string;
-  name: string;
-  ingredients: string[];
-}
+import { CatalogCard } from '../../../../components/catalog-card/catalog-card';
+import { Pizza } from '../../../../model/pizza';
 
 @Component({
   selector: 'app-catalog',
-  imports: [CommonModule],
+  imports: [CommonModule, CatalogCard],
   templateUrl: './catalog.html',
   styleUrl: './catalog.scss',
 })
@@ -19,7 +14,7 @@ export class Catalog {
     return [
       {
         uid: '1',
-        imgUrl: '/meat-deluxe.png', // представим, что это ссылка на S3, а в папке public ничего не лежит))
+        imgUrl: '/pizza-placeholder.png', // представим, что это ссылка на S3, а в папке public ничего не лежит))
         name: 'Мясная Делюкс',
         ingredients: [
           'Пепперони',
@@ -35,37 +30,37 @@ export class Catalog {
       },
       {
         uid: '2',
-        imgUrl: '/sea-premium.png',
+        imgUrl: '/pizza-placeholder.png',
         name: 'Морская Премиум',
         ingredients: ['Перец', 'Сыр', 'Креветки', 'Кальмары', 'Мидии', 'Лосось'],
       },
       {
         uid: '3',
-        imgUrl: '/bacon-sausages.png',
+        imgUrl: '/pizza-placeholder.png',
         name: 'Бекон и Сосиски',
         ingredients: ['Бекон', 'Сыр', 'Сосиски', 'Ананас', 'Томатная паста'],
       },
       {
         uid: '4',
-        imgUrl: '/chicken-deluxe.png',
+        imgUrl: '/pizza-placeholder.png',
         name: 'Куриная Делюкс',
         ingredients: ['Курица', 'Ананас', 'Сыр Пепперони', 'Соус для пиццы', 'Томатная паста'],
       },
       {
         uid: '5',
-        imgUrl: '/bbq-premium.png',
+        imgUrl: '/pizza-placeholder.png',
         name: 'Барбекю Премиум',
         ingredients: ['Свинина BBQ', 'Сыр Барбекю', 'Сыр', 'Курица', 'Соус для пиццы', 'Соус чили'],
       },
       {
         uid: '6',
-        imgUrl: '/pepperoni-double.png',
+        imgUrl: '/pizza-placeholder.png',
         name: 'Пепперони Дабл',
         ingredients: ['Пепперони', 'Сыр', 'Колбаса 2 видов: обжаренная и вареная'],
       },
       {
         uid: '7',
-        imgUrl: '/chicken-trio.png',
+        imgUrl: '/pizza-placeholder.png',
         name: 'Куриное трио',
         ingredients: [
           'Жареная курица',
@@ -79,7 +74,7 @@ export class Catalog {
       },
       {
         uid: '8',
-        imgUrl: '/cheese.png',
+        imgUrl: '/pizza-placeholder.png',
         name: 'Сырная',
         ingredients: ['Сыр Джюгас', 'Сыр с плесенью', 'Сыр Моцарелла', 'Сыр секретный'],
       },
