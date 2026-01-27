@@ -1,0 +1,41 @@
+<header class="header">
+  <div class="header__container">
+    <div class="header__logo">
+      <img class="header__logo-image" width="100" height="100" src="/logo.png" alt="Logo" />
+      <span class="header__logo-text">Pizza Cheff</span>
+    </div>
+    @if (isMobile) {
+      <button
+        type="button"
+        class="header__burger"
+        [ngClass]="{ 'header__burger--open': isMenuOpen }"
+        (click)="toggleMenu()"
+        aria-label="Открыть меню"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    }
+    <ul
+      class="header__menu"
+      [ngClass]="{
+        'header__menu--mobile': isMobile,
+        'header__menu--open': !isMobile || isMenuOpen,
+      }"
+    >
+      <li class="header__menu-item">
+        <a href="#" class="header__menu-link">Пиццы</a>
+      </li>
+      <li class="header__menu-item">
+        <a href="#" class="header__menu-link">Напитки</a>
+      </li>
+      <li class="header__menu-item">
+        <a href="#" class="header__menu-link">Доставка и оплата</a>
+      </li>
+      <li class="header__menu-item">
+        <a href="#" class="header__menu-link">Контакты</a>
+      </li>
+    </ul>
+  </div>
+</header>
