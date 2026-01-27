@@ -1,11 +1,8 @@
 .hero {
-  padding: 120px 0 60px;
+  padding: 120px 0;
   background-color: var(--color-background);
 
   &__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 16px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0px;
