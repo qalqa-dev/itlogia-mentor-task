@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { CatalogCard } from '../../../../components/catalog-card/catalog-card';
+import { CatalogCard } from '@components/catalog-card/catalog-card';
 
 interface Pizza {
   uid: string;

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Pizza } from '../../model/pizza';
-import { Button } from '../button/button';
+import { Pizza } from '@model/pizza';
+import { Button } from '@components/button/button';
 
 @Component({
   selector: 'app-catalog-card',

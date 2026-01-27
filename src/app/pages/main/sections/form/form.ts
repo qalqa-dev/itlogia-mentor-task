@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Button } from '../../../../components/button/button';
+import { Button } from '@components/button/button';
 
 @Component({
   selector: 'app-form',

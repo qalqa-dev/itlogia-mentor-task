@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Catalog } from './sections/catalog/catalog';
-import { Form } from './sections/form/form';
-import { Hero } from './sections/hero/hero';
+import { Catalog } from '@pages/main/sections/catalog/catalog';
+import { Form } from '@pages/main/sections/form/form';
+import { Hero } from '@pages/main/sections/hero/hero';
 
 @Component({
   selector: 'app-main',
