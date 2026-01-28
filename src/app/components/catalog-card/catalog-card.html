@@ -1,6 +1,11 @@
 <li class="catalog-card">
   <div class="catalog-card__container">
-    <img class="catalog-card__img" [src]="pizza.imgUrl" [alt]="pizza.name" />
+    <img 
+      class="catalog-card__img" 
+      [src]="pizza.imgUrl" 
+      [alt]="pizza.name"
+      (click)="onImageClick()"
+    />
     <h3 class="catalog-card__name">{{ pizza.name }}</h3>
     <p class="catalog-card__ingredients">
       {{ pizza.ingredients.join(', ') }}

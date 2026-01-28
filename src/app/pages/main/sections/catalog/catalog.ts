@@ -89,4 +89,26 @@ export class Catalog {
   }
 
   pizzas: Pizza[] = this.getPizzasFromFakeBackend();
+
+  isModalOpen = false;
+  modalImageUrl = '';
+  modalImageName = '';
+
+  openModal(imgUrl: string, name: string): void {
+    this.modalImageUrl = imgUrl;
+    this.modalImageName = name;
+    this.isModalOpen = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+    document.body.style.overflow = '';
+  }
+
+  onBackdropClick(event: MouseEvent): void {
+    if ((event.target as HTMLElement).classList.contains('catalog-modal')) {
+      this.closeModal();
+    }
+  }
 }

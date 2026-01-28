@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Pizza } from '@model/pizza';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Button } from '@components/button/button';
+import { Pizza } from '@model/pizza';
 
 @Component({
   selector: 'app-catalog-card',
@@ -15,4 +15,13 @@ export class CatalogCard {
     name: '',
     ingredients: [],
   };
+
+  @Output() imageClick = new EventEmitter<{ imgUrl: string; name: string }>();
+
+  onImageClick(): void {
+    this.imageClick.emit({
+      imgUrl: this.pizza.imgUrl,
+      name: this.pizza.name,
+    });
+  }
 }

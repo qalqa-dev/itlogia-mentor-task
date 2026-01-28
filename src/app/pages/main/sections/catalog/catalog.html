@@ -4,8 +4,29 @@
 
     <ul class="catalog__list">
       @for (pizza of pizzas; track pizza.uid) {
-        <app-catalog-card [pizza]="pizza" />
+        <app-catalog-card [pizza]="pizza" (imageClick)="openModal($event.imgUrl, $event.name)" />
       }
     </ul>
   </div>
+
+  @if (isModalOpen) {
+    <div
+      class="catalog-modal"
+      (click)="onBackdropClick($event)"
+      (keydown.escape)="closeModal()"
+      tabindex="0"
+    >
+      <div class="catalog-modal__card">
+        <button
+          class="catalog-modal__close"
+          (click)="closeModal()"
+          aria-label="Закрыть модальное окно"
+        >
+          ×
+        </button>
+        <img class="catalog-modal__img" [src]="modalImageUrl" [alt]="modalImageName" />
+        <p class="catalog-modal__name">{{ modalImageName }}</p>
+      </div>
+    </div>
+  }
 </section>
