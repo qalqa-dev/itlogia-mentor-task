@@ -1,0 +1,14 @@
+<div class="popup-container">
+  @for (popup of popups$ | async; track popup.id) {
+    <div
+      class="popup"
+      [class.popup--closing]="popup.isClosing"
+      (click)="onPopupClick(popup.id)"
+    >
+      <div class="popup__content">
+        <span class="popup__icon">✓</span>
+        <span class="popup__message">{{ popup.message }}</span>
+      </div>
+    </div>
+  }
+</div>
